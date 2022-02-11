@@ -8,4 +8,8 @@ describe('FizzBuzz', () => {
   it('should returns 2 with 2', () => {
     expect(fizzBuzz(2)).toBe(2);
   });
+
+  it('should returns 3 with 3', () => {
+    expect(fizzBuzz(3)).toBe('Fizz');
+  });
 });
