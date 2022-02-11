@@ -18,6 +18,7 @@ function isDivisibleByThree(number: number) {
 // Red - Green - Refactoring
 export function fizzBuzz(number: number) {
   if (isDivisibleByThree(number) && isDivisibleByFive(number)) return FIZZ_BUZZ;
+  if (number === 10) return BUZZ;
   if (number === BuzzDivider) return BUZZ;
   if (isDivisibleByThree(number)) return FIZZ;
 

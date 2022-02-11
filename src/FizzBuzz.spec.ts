@@ -25,11 +25,15 @@ describe('FizzBuzz', () => {
     expect(fizzBuzz(6)).toBe('Fizz');
   });
 
+  it('should returns "Buzz" with 10', () => {
+    expect(fizzBuzz(10)).toBe('Buzz');
+  });
+
   it('should returns "FizzBuzz" with 15', () => {
     expect(fizzBuzz(15)).toBe('FizzBuzz');
   });
 
-  it.skip('should returns "FizzBuzz" with 30', () => {
+  it('should returns "FizzBuzz" with 30', () => {
     expect(fizzBuzz(30)).toBe('FizzBuzz');
   });
 });
