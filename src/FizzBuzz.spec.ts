@@ -1,39 +1,23 @@
 import { fizzBuzz } from './FizzBuzz';
 
 describe('FizzBuzz', () => {
-  it('should returns 1 with 1', () => {
-    expect(fizzBuzz(1)).toBe(1);
-  });
-
-  it('should returns 2 with 2', () => {
-    expect(fizzBuzz(2)).toBe(2);
-  });
-
-  it('should returns "Fizz" with 3', () => {
-    expect(fizzBuzz(3)).toBe('Fizz');
-  });
-
-  it('should returns 4 with 4', () => {
-    expect(fizzBuzz(4)).toBe(4);
-  });
-
-  it('should returns "Buzz" with 5', () => {
-    expect(fizzBuzz(5)).toBe('Buzz');
-  });
-
-  it('should returns "Fizz" with 6', () => {
-    expect(fizzBuzz(6)).toBe('Fizz');
-  });
-
-  it('should returns "Buzz" with 10', () => {
-    expect(fizzBuzz(10)).toBe('Buzz');
-  });
-
-  it('should returns "FizzBuzz" with 15', () => {
-    expect(fizzBuzz(15)).toBe('FizzBuzz');
-  });
-
-  it('should returns "FizzBuzz" with 30', () => {
-    expect(fizzBuzz(30)).toBe('FizzBuzz');
-  });
+  it.each`
+    actual | expected
+    ${1}   | ${1}
+    ${2}   | ${2}
+    ${3}   | ${'Fizz'}
+    ${4}   | ${4}
+    ${5}   | ${'Buzz'}
+    ${6}   | ${'Fizz'}
+    ${7}   | ${7}
+    ${9}   | ${'Fizz'}
+    ${10}  | ${'Buzz'}
+    ${15}  | ${'FizzBuzz'}
+    ${30}  | ${'FizzBuzz'}
+  `(
+    'should returns $expected with $actual',
+    ({ actual, expected }: { actual: number; expected: number | string }) => {
+      expect(fizzBuzz(actual)).toBe(expected);
+    },
+  );
 });
